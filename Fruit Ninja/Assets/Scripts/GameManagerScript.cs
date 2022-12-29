@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManagerScript : MonoBehaviour
 {
@@ -62,9 +63,12 @@ public class GameManagerScript : MonoBehaviour
 
     public void Explode()
     {
-        
+        blade.enabled = false;
+        spawner.enabled = false;
 
-        StartCoroutine(ExplodeSequence());
+        SceneManager.LoadScene(2);
+
+        // StartCoroutine(ExplodeSequence());
     }
 
     private IEnumerator ExplodeSequence()
